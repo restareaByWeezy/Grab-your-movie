@@ -1,0 +1,99 @@
+@use '/src/styles/constants/colors';
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: colors.$LWHITE;
+}
+.modal {
+  button {
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    margin: 5px;
+    background-color: colors.$LGRAY;
+    &:first-child {
+      &:hover {
+        background-color: colors.$LGREEN;
+      }
+    }
+    &:last-child {
+      &:hover {
+        background-color: colors.$LGRAY;
+      }
+    }
+  }
+}
+.modal > section {
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  background-color: colors.$LPURPLE;
+  color: colors.$LBLACK;
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+.modal > section > header {
+  position: relative;
+  padding: 16px 64px 16px 16px;
+  background-color: colors.$LGRAY;
+  font-weight: 700;
+}
+.modal > section > header button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: colors.$LWHITE;
+  background-color: transparent;
+}
+.modal > section > main {
+  padding: 16px;
+  border-bottom: 1px solid colors.$LBLACK;
+  border-top: 1px solid colors.$LBLACK;
+  font-size: 25px;
+  font-weight: 600;
+}
+.modal > section > footer {
+  padding: 12px 16px;
+  text-align: right;
+}
+.modal > section > footer button {
+  padding: 6px 12px;
+  color: colors.$LWHITE;
+  background-color: colors.$LBLACK;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal.openModal {
+  display: flex;
+  align-items: center;
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

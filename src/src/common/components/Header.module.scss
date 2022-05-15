@@ -1,0 +1,10 @@
+@use '/src/styles/constants/colors';
+
+header {
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 15px 5px 5px 6px;
+    color: colors.$LWHITE;
+  }
+}

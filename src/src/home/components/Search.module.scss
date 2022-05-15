@@ -1,0 +1,37 @@
+@use '/src/styles/constants/colors';
+
+.container {
+  padding: 0 5px;
+
+  .searchWrapper {
+    display: flex;
+    position: relative;
+    height: 45px;
+    margin-top: 10px;
+    background-color: colors.$LGRAY;
+    border-radius: 5px;
+
+    .searchIcon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      margin-top: 9px;
+    }
+    .search {
+      width: 250px;
+      height: 45px;
+      font-size: 30px;
+      margin-left: 30px;
+    }
+    .closeIcon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 20px;
+      top: 8px;
+    }
+    button {
+      appearance: none;
+    }
+  }
+}

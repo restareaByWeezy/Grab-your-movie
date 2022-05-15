@@ -1,0 +1,26 @@
+@use '/src/styles/constants/colors';
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 360px;
+    padding: 20px 16px;
+    border-radius: 15px;
+    background-color: colors.$LWHITE;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .wrapper {
+      background-color: colors.$LBLACK;
+      border-radius: 15px;
+      padding: 0 10px;
+    }
+  }
+}

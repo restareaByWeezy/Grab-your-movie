@@ -1,0 +1,78 @@
+@use '/src/styles/constants/colors';
+
+.container {
+  position: relative;
+  height: 420px;
+  margin-top: 30px;
+  padding: 5px 10px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title {
+    color: colors.$LGREEN;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .noMovie {
+    position: absolute;
+    top: 30%;
+    left: 65px;
+    color: colors.$LGREEN;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    color: colors.$LWHITE;
+
+    .movieImg {
+      display: inline-block;
+      flex: 0 0 60px;
+      width: 65px;
+      height: 65px;
+    }
+
+    .detail {
+      display: inline-block;
+      padding-top: 2px;
+      padding-left: 7px;
+      text-align: left;
+
+      .title {
+        color: colors.$LPURPLE;
+        font-weight: 600;
+      }
+
+      .year {
+        font-size: 12px;
+      }
+
+      .genre {
+        margin-left: 10px;
+        font-size: 15px;
+      }
+    }
+
+    .starIcon {
+      flex: 0 0 80px;
+      width: 22px;
+      height: 22px;
+      margin-left: auto;
+      padding-bottom: 5px;
+    }
+  }
+
+  .submitBtn {
+    &:hover {
+      background-color: aquamarine;
+    }
+  }
+}
