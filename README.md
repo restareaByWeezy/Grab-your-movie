@@ -14,7 +14,7 @@
   
 👉  Intersection observer를 통해 무한스크롤을 구현했습니다.  
 
-
+👉  페이지 이동은 react-router-dom으로 구현하였습니다.
 
 
 
