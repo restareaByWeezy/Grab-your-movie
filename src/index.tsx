@@ -1,15 +1,13 @@
-/* eslint-disable import/extensions */
-// @ts-nocheck
-
-import { createRoot } from 'react-dom/client'
-import RootRouter from './src/routes/RootRouter'
+import RootRouter from './routes/RootRouter'
 import { RecoilRoot } from 'recoil'
+
+// eslint-disable-next-line import/extensions
 import './styles/index.js'
 
-import React from 'react'
+import ReactDOM from 'react-dom'
 
-const rootElement = document.getElementById('root')
-const root = createRoot(rootElement)
+// @ts-ignore
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <RecoilRoot>

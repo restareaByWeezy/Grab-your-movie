@@ -1,16 +1,15 @@
 @use '/src/styles/constants/colors';
 
-.navbar {
-  position: sticky;
-  bottom: 0;
-}
-
 .container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 50px;
+  padding-bottom: 20px;
 
   .searchWrapper {
     display: flex;
@@ -20,12 +19,12 @@
     padding-top: 5px;
 
     .searchIcon {
-      margin-top: 10px;
       width: 35px;
       height: 35px;
-      color: black;
+      color: colors.$MGRAYTEXT;
 
       &:hover {
+        color: colors.$MWHITE;
         cursor: pointer;
       }
     }
@@ -39,12 +38,12 @@
     align-items: center;
 
     .starIcon {
-      margin-top: 10px;
       width: 35px;
       height: 35px;
-      color: black;
+      color: colors.$MGRAYTEXT;
     }
     &:hover {
+      color: colors.$MWHITE;
       cursor: pointer;
     }
   }

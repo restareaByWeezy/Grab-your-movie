@@ -1,27 +1,22 @@
 @use '/src/styles/constants/colors';
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  height: 420px;
-  margin-top: 30px;
-  padding: 5px 10px;
+  height: 450px;
   overflow: scroll;
+  color: colors.$MWHITE;
+
   &::-webkit-scrollbar {
     display: none;
-  }
-
-  .title {
-    color: colors.$LGREEN;
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 15px;
   }
 
   .noMovie {
     position: absolute;
     top: 30%;
-    left: 65px;
-    color: colors.$LGREEN;
+    left: 75px;
     font-size: 20px;
     font-weight: 600;
   }
@@ -30,14 +25,14 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 5px;
-    color: colors.$LWHITE;
+    margin-bottom: 25px;
 
     .movieImg {
       display: inline-block;
       flex: 0 0 60px;
       width: 65px;
-      height: 65px;
+      height: 100px;
+      margin-bottom: 5px;
     }
 
     .detail {
@@ -47,7 +42,6 @@
       text-align: left;
 
       .title {
-        color: colors.$LPURPLE;
         font-weight: 600;
       }
 
@@ -57,7 +51,7 @@
 
       .genre {
         margin-left: 10px;
-        font-size: 15px;
+        font-size: 12px;
       }
     }
 
@@ -67,12 +61,6 @@
       height: 22px;
       margin-left: auto;
       padding-bottom: 5px;
-    }
-  }
-
-  .submitBtn {
-    &:hover {
-      background-color: aquamarine;
     }
   }
 }

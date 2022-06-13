@@ -7,8 +7,8 @@ import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautif
 
 import styles from './FavList.module.scss'
 
-import Modal from 'src/common/components/Modal'
-import { currentMovieAtom, favListAtom, modalOpenAtom } from 'src/common/atom/Atom'
+import Modal from 'common/components/Modal'
+import { currentMovieAtom, favListAtom, modalOpenAtom } from 'common/atom/Atom'
 
 const FavList = () => {
   const [favList, setFavList] = useRecoilState(favListAtom)
@@ -67,7 +67,7 @@ const FavList = () => {
                     >
                       <img src={Poster} className={styles.movieImg} alt='none' />
                       <span className={styles.detail}>
-                        <div className={styles.title}>{Title}</div>
+                        <div className={styles.movieTitle}>{Title}</div>
                         <span className={styles.year}>{Year}</span>
                         <span className={styles.genre}>{Type}</span>
                       </span>
@@ -84,16 +84,17 @@ const FavList = () => {
   )
 
   return (
-    <ul className={styles.container}>
+    <div>
       <h1 className={styles.title}>My Movies</h1>
-      {favList.length === 0 && <span className={styles.noMovie}>영화를 Grab 해보세요!</span>}
-      {favListMap}
-      <li ref={ref} />
-
-      <Modal close={closeModal} header='Will you grab this movie?'>
-        test
-      </Modal>
-    </ul>
+      <ul className={styles.container}>
+        {favList.length === 0 && <span className={styles.noMovie}>영화를 Grab 해보세요!</span>}
+        {favListMap}
+        <li ref={ref} />
+        <Modal close={closeModal} header='Will you grab this movie?'>
+          test
+        </Modal>
+      </ul>
+    </div>
   )
 }
 

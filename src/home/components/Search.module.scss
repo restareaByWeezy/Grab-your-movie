@@ -1,34 +1,40 @@
 @use '/src/styles/constants/colors';
 
 .container {
-  padding: 0 5px;
+  padding: 10px 5px;
 
   .searchWrapper {
     display: flex;
     position: relative;
     height: 45px;
-    margin-top: 10px;
-    background-color: colors.$LGRAY;
-    border-radius: 5px;
+    margin: 20px 0;
+    background-color: colors.$BGDARK;
+    border-radius: 15px;
+    background-color: colors.$MINPUT;
 
     .searchIcon {
       position: absolute;
-      width: 30px;
-      height: 30px;
+      left: 10px;
+      width: 25px;
+      height: 25px;
       margin-top: 9px;
+      fill: colors.$WHITE;
     }
-    .search {
+    .searchInput {
       width: 250px;
       height: 45px;
       font-size: 30px;
-      margin-left: 30px;
+      padding-left: 40px;
+      color: colors.$MWHITE;
+      font-size: 16px;
     }
     .closeIcon {
       position: absolute;
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       right: 20px;
       top: 8px;
+      fill: colors.$WHITE;
     }
     button {
       appearance: none;

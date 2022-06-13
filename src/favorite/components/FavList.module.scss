@@ -1,13 +1,15 @@
 @use '/src/styles/constants/colors';
+.title {
+  color: colors.$GREEN;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
-  height: 420px;
-  padding: 5px 10px;
-  overflow: scroll;
+  height: 480px;
+  overflow: auto;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -15,8 +17,8 @@
   .noMovie {
     position: absolute;
     top: 30%;
-    left: 75px;
-    color: colors.$LPURPLE;
+    left: 65px;
+    color: colors.$GREEN;
     font-size: 20px;
     font-weight: 600;
   }
@@ -25,15 +27,14 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    color: colors.$WHITE;
 
     .movieImg {
       display: inline-block;
       flex: 0 0 60px;
-      width: 60px;
-      height: 60px;
-      border: 1px solid;
-      margin-bottom: 5px;
+      width: 65px;
+      height: 100px;
     }
 
     .detail {
@@ -41,10 +42,9 @@
       padding-top: 2px;
       padding-left: 7px;
       text-align: left;
-      color: colors.$LWHITE;
 
-      .title {
-        color: colors.$LPURPLE;
+      .movieTitle {
+        color: colors.$WHITE;
         font-weight: 600;
       }
 
@@ -54,7 +54,7 @@
 
       .genre {
         margin-left: 10px;
-        font-size: 12px;
+        font-size: 15px;
       }
     }
 
@@ -64,6 +64,12 @@
       height: 22px;
       margin-left: auto;
       padding-bottom: 5px;
+    }
+  }
+
+  .submitBtn {
+    &:hover {
+      background-color: aquamarine;
     }
   }
 }

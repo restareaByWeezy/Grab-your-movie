@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 import { recoilPersist } from 'recoil-persist'
-import { IListItem } from 'src/types/movie'
+import { IListItem } from 'types/movie'
 import store from 'storejs'
 
 //  객체로 합치기

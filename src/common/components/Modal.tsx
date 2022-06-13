@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { IListItem } from 'src/types/movie'
+import { IListItem } from 'types/movie'
 import { currentMovieAtom, favListAtom, modalOpenAtom } from '../atom/Atom'
 import './Modal.scss'
 

@@ -8,7 +8,7 @@
   bottom: 0;
   left: 0;
   z-index: 99;
-  background-color: colors.$LWHITE;
+  background-color: colors.$WHITE;
 }
 .modal {
   button {
@@ -16,15 +16,15 @@
     cursor: pointer;
     border: 0;
     margin: 5px;
-    background-color: colors.$LGRAY;
+    background-color: colors.$BGDARK;
     &:first-child {
       &:hover {
-        background-color: colors.$LGREEN;
+        background-color: colors.$GREEN;
       }
     }
     &:last-child {
       &:hover {
-        background-color: colors.$LGRAY;
+        background-color: colors.$BGDARK;
       }
     }
   }
@@ -34,15 +34,15 @@
   max-width: 300px;
   margin: 0 auto;
   border-radius: 0.3rem;
-  background-color: colors.$LPURPLE;
-  color: colors.$LBLACK;
+  background-color: colors.$WHITE;
+  color: colors.$BLACK;
   animation: modal-show 0.3s;
   overflow: hidden;
 }
 .modal > section > header {
   position: relative;
   padding: 16px 64px 16px 16px;
-  background-color: colors.$LGRAY;
+  background-color: colors.$BGDARK;
   font-weight: 700;
 }
 .modal > section > header button {
@@ -53,13 +53,13 @@
   font-size: 21px;
   font-weight: 700;
   text-align: center;
-  color: colors.$LWHITE;
+  color: colors.$WHITE;
   background-color: transparent;
 }
 .modal > section > main {
   padding: 16px;
-  border-bottom: 1px solid colors.$LBLACK;
-  border-top: 1px solid colors.$LBLACK;
+  border-bottom: 1px solid colors.$BLACK;
+  border-top: 1px solid colors.$BLACK;
   font-size: 25px;
   font-weight: 600;
 }
@@ -69,8 +69,8 @@
 }
 .modal > section > footer button {
   padding: 6px 12px;
-  color: colors.$LWHITE;
-  background-color: colors.$LBLACK;
+  color: colors.$WHITE;
+  background-color: colors.$BLACK;
   border-radius: 5px;
   font-size: 13px;
 }

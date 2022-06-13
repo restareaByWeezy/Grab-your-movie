@@ -7,7 +7,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import ReactLoading from 'react-loading'
 
 import { AiOutlineStar } from 'react-icons/ai'
-import Modal from 'src/common/components/Modal'
+import Modal from 'common/components/Modal'
 
 import styles from './List.module.scss'
 

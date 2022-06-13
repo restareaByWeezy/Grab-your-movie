@@ -12,15 +12,13 @@ const Navbar = () => {
   }
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.container}>
-        <Link to='/' onClick={handleLink} className={styles.searchWrapper}>
-          <AiOutlineSearch className={styles.searchIcon} />
-        </Link>
-        <Link to='/favorite' onClick={handleLink} className={styles.starWrapper}>
-          <AiOutlineStar className={styles.starIcon} />
-        </Link>
-      </div>
+    <div className={styles.container}>
+      <Link to='/' onClick={handleLink} className={styles.searchWrapper}>
+        <AiOutlineSearch className={styles.searchIcon} />
+      </Link>
+      <Link to='/favorite' onClick={handleLink} className={styles.starWrapper}>
+        <AiOutlineStar className={styles.starIcon} />
+      </Link>
     </div>
   )
 }

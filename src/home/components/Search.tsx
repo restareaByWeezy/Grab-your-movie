@@ -1,6 +1,6 @@
 import styles from './Search.module.scss'
 import { useRecoilState } from 'recoil'
-import { inputTextAtom, isLoadingAtom, movieListAtom, pageNumberAtom, maxPageAtom } from 'src/common/atom/Atom'
+import { inputTextAtom, isLoadingAtom, movieListAtom, pageNumberAtom, maxPageAtom } from 'common/atom/Atom'
 import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import axios from 'axios'
@@ -68,7 +68,7 @@ const Search = () => {
       <div className={styles.searchWrapper}>
         <AiOutlineSearch className={styles.searchIcon} />
         <form action='submit' onSubmit={handleSubmit}>
-          <input className={styles.search} type='text' value={text} onChange={handleChange} />
+          <input className={styles.searchInput} type='text' value={text} onChange={handleChange} />
         </form>
         <AiOutlineClose className={styles.closeIcon} />
       </div>
