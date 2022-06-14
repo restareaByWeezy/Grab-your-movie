@@ -2,8 +2,8 @@
 // @ts-nocheck
 
 import { useRef } from 'react'
-import { useRecoilState } from 'recoil'
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
+import { useRecoilState } from 'recoil'
 
 import styles from './FavList.module.scss'
 
@@ -84,15 +84,13 @@ const FavList = () => {
   )
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>My Movies</h1>
-      <ul className={styles.container}>
+      <ul className={styles.listWrapper}>
         {favList.length === 0 && <span className={styles.noMovie}>영화를 Grab 해보세요!</span>}
         {favListMap}
         <li ref={ref} />
-        <Modal close={closeModal} header='Will you grab this movie?'>
-          test
-        </Modal>
+        <Modal close={closeModal} header='Will you grab this movie?' />
       </ul>
     </div>
   )

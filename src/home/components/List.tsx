@@ -6,7 +6,6 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import ReactLoading from 'react-loading'
 
-import { AiOutlineStar } from 'react-icons/ai'
 import Modal from 'common/components/Modal'
 
 import styles from './List.module.scss'
@@ -87,7 +86,6 @@ const List = () => {
                         <span className={styles.year}>{Year}</span>
                         <span className={styles.genre}>{Type}</span>
                       </span>
-                      <AiOutlineStar className={styles.starIcon} />
                     </div>
                   </li>
                 )}

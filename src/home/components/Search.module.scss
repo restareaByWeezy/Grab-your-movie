@@ -1,13 +1,13 @@
 @use '/src/styles/constants/colors';
 
 .container {
-  padding: 10px 5px;
+  padding: 10px 0;
 
   .searchWrapper {
     display: flex;
     position: relative;
     height: 45px;
-    margin: 20px 0;
+    margin: 20px 35px;
     background-color: colors.$BGDARK;
     border-radius: 15px;
     background-color: colors.$MINPUT;

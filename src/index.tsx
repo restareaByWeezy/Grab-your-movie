@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil'
 // eslint-disable-next-line import/extensions
 import './styles/index.js'
 
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 
 // @ts-ignore
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)

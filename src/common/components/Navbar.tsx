@@ -1,9 +1,8 @@
-import React from 'react'
-import styles from './Navbar.module.scss'
-import { AiOutlineSearch, AiOutlineStar } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
-import { toggleLinkAtom } from '../atom/Atom'
+import { NavLink } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
+import { toggleLinkAtom } from '../atom/Atom'
+import { AiOutlineSearch, AiOutlineStar } from 'react-icons/ai'
+import styles from './Navbar.module.scss'
 
 const Navbar = () => {
   const [link, setLink] = useRecoilState(toggleLinkAtom)
@@ -13,12 +12,20 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <Link to='/' onClick={handleLink} className={styles.searchWrapper}>
+      <NavLink
+        to='/'
+        onClick={handleLink}
+        className={({ isActive }) => styles.searchWrapper + (isActive ? ` ${styles.selected}` : '')}
+      >
         <AiOutlineSearch className={styles.searchIcon} />
-      </Link>
-      <Link to='/favorite' onClick={handleLink} className={styles.starWrapper}>
+      </NavLink>
+      <NavLink
+        to='/favorite'
+        onClick={handleLink}
+        className={({ isActive }) => styles.starWrapper + (isActive ? ` ${styles.selected}` : '')}
+      >
         <AiOutlineStar className={styles.starIcon} />
-      </Link>
+      </NavLink>
     </div>
   )
 }

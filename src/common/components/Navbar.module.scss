@@ -9,9 +9,10 @@
   justify-content: space-between;
   width: 100%;
   height: 50px;
-  padding-bottom: 20px;
+  color: colors.$MGRAYTEXT;
 
   .searchWrapper {
+    position: relative;
     display: flex;
     flex: 1;
     justify-content: center;
@@ -19,12 +20,10 @@
     padding-top: 5px;
 
     .searchIcon {
-      width: 35px;
-      height: 35px;
-      color: colors.$MGRAYTEXT;
-
+      width: 25px;
+      height: 25px;
       &:hover {
-        color: colors.$MWHITE;
+        color: colors.$PURPLE;
         cursor: pointer;
       }
     }
@@ -34,17 +33,23 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
 
     .starIcon {
-      width: 35px;
-      height: 35px;
-      color: colors.$MGRAYTEXT;
-    }
-    &:hover {
-      color: colors.$MWHITE;
-      cursor: pointer;
+      width: 25px;
+      height: 25px;
+
+      &:hover {
+        color: colors.$PURPLE;
+        cursor: pointer;
+      }
     }
   }
+}
+
+.selected {
+  color: colors.$PURPLE;
 }
