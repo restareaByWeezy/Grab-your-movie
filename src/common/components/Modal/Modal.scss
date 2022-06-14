@@ -15,12 +15,12 @@
 
     &:first-child {
       &:hover {
-        background-color: colors.$GREEN;
+        background-color: colors.$PURPLE;
       }
     }
     &:last-child {
       &:hover {
-        background-color: colors.$BGDARK;
+        background-color: colors.$PURPLE;
       }
     }
   }
@@ -30,8 +30,8 @@
   max-width: 300px;
   margin: 0 auto;
   border-radius: 0.3rem;
-  background-color: colors.$WHITE;
-  color: colors.$BLACK;
+  background-color: colors.$BGLIGHT;
+  color: colors.$MWHITE;
   animation: modal-show 0.3s;
   overflow: hidden;
 }
@@ -49,12 +49,11 @@
   font-size: 21px;
   font-weight: 700;
   text-align: center;
-  color: colors.$WHITE;
+  color: colors.$BGLIGHT;
   background-color: transparent;
 }
 .modal > section > main {
   padding: 16px;
-  border-bottom: 1px solid colors.$BLACK;
   border-top: 1px solid colors.$BLACK;
   font-size: 25px;
   font-weight: 600;

@@ -12,7 +12,6 @@ import { currentMovieAtom, favListAtom, modalOpenAtom } from 'common/atom/Atom'
 
 const FavList = () => {
   const [favList, setFavList] = useRecoilState(favListAtom)
-  // const [isLoading, setIsLoading] = useState<boolean>(false)
   const [, setCurrentMovie] = useRecoilState<IListItem[]>(currentMovieAtom)
   const [, setShowModal] = useRecoilState(modalOpenAtom)
 

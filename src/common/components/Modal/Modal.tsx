@@ -26,7 +26,6 @@ const ModalContent = ({ header }: IProps) => {
   }
 
   return (
-    // 모달이 열릴때 openModal 클래스가 생성된다.
     <ModalPortal>
       <div className={modalOpen ? 'openModal modal' : 'modal'}>
         {modalOpen ? (

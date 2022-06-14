@@ -19,9 +19,10 @@
 
     .noMovie {
       position: absolute;
-      top: 30%;
-      left: 65px;
-      color: colors.$GREEN;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: colors.$PURPLE;
       font-size: 20px;
       font-weight: 600;
     }
