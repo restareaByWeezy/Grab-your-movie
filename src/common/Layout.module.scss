@@ -20,5 +20,9 @@
     background: linear-gradient(52deg, rgba(15, 15, 25, 1) 6%, rgba(35, 36, 48, 1) 87%);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     z-index: 0;
+
+    &.isOpen {
+      filter: blur(4px);
+    }
   }
 }
