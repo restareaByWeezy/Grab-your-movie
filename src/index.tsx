@@ -6,7 +6,6 @@ import './styles/index.js'
 
 import ReactDOM from 'react-dom/client'
 
-// @ts-ignore
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(

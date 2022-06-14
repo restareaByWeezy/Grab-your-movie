@@ -17,7 +17,6 @@ const FavList = () => {
   const [, setShowModal] = useRecoilState(modalOpenAtom)
 
   //  dnd logic
-  //  @ts-ignore
 
   const ref = useRef()
 
