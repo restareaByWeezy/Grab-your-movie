@@ -4,7 +4,7 @@
 
 ## Dependencies
 
-React, React-beautiful-dnd, react-router-dom, recoil
+React, React-beautiful-dnd, React-router-dom, Recoil
 
 ## ✨ 주요 기능들
 
