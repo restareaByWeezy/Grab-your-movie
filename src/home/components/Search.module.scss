@@ -15,9 +15,9 @@
     .searchIcon {
       position: absolute;
       left: 10px;
+      top: 10px;
       width: 25px;
       height: 25px;
-      margin-top: 9px;
       fill: colors.$WHITE;
     }
     .searchInput {
@@ -33,7 +33,7 @@
       width: 25px;
       height: 25px;
       right: 20px;
-      top: 8px;
+      top: 10px;
       fill: colors.$WHITE;
     }
     button {

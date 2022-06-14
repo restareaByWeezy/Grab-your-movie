@@ -10,6 +10,7 @@
   width: 100%;
   height: 50px;
   color: colors.$MGRAYTEXT;
+  margin-bottom: 15px;
 
   .searchWrapper {
     position: relative;
@@ -20,8 +21,8 @@
     padding-top: 5px;
 
     .searchIcon {
-      width: 25px;
-      height: 25px;
+      width: 35px;
+      height: 35px;
       &:hover {
         color: colors.$PURPLE;
         cursor: pointer;
@@ -39,8 +40,8 @@
     align-items: center;
 
     .starIcon {
-      width: 25px;
-      height: 25px;
+      width: 35px;
+      height: 35px;
 
       &:hover {
         color: colors.$PURPLE;

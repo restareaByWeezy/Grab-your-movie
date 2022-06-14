@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 const Layout = () => {
   return (
     <div className={styles.background}>
-      <div className={styles.container}>
+      <div id='container' className={styles.container}>
         <div className={styles.wrapper}>
           <Header />
           <main>

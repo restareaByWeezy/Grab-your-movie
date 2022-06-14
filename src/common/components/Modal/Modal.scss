@@ -1,22 +1,18 @@
 @use '/src/styles/constants/colors';
 
 .modal {
-  display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  background-color: colors.$WHITE;
-}
-.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   button {
     outline: none;
     cursor: pointer;
     border: 0;
     margin: 5px;
     background-color: colors.$BGDARK;
+
     &:first-child {
       &:hover {
         background-color: colors.$GREEN;
@@ -78,6 +74,7 @@
   display: flex;
   align-items: center;
   animation: modal-bg-show 0.3s;
+  z-index: 100;
 }
 @keyframes modal-show {
   from {

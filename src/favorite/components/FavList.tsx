@@ -7,7 +7,7 @@ import { useRecoilState } from 'recoil'
 
 import styles from './FavList.module.scss'
 
-import Modal from 'common/components/Modal'
+import Modal from 'common/components/Modal/Modal'
 import { currentMovieAtom, favListAtom, modalOpenAtom } from 'common/atom/Atom'
 
 const FavList = () => {

@@ -6,7 +6,7 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import ReactLoading from 'react-loading'
 
-import Modal from 'common/components/Modal'
+import Modal from 'common/components/Modal/Modal'
 
 import styles from './List.module.scss'
 
