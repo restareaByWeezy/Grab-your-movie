@@ -22,7 +22,7 @@ const Search = () => {
       setMovieList([])
       return
     }
-    const url = `http://www.omdbapi.com/?apikey=7c1fab90`
+    const url = `https://www.omdbapi.com/?apikey=7c1fab90`
     if (page <= maxPage) {
       axios
         .get(url, {
