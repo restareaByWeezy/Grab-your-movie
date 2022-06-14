@@ -1,6 +1,4 @@
-# Grip Assignment!
-
-## Grab your movie
+# Grab your movie!
 
 ## Dependencies
 
