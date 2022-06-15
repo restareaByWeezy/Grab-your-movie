@@ -1,8 +1,7 @@
 import { RootRouter } from './routes/RootRouter'
 import { RecoilRoot } from 'recoil'
 
-// eslint-disable-next-line import/extensions
-import './styles/index.js'
+import './styles'
 
 import ReactDOM from 'react-dom/client'
 

@@ -7,7 +7,7 @@ import store from 'storejs'
 
 const { persistAtom } = recoilPersist()
 
-export const movieListAtom = atom({
+export const movieListAtom = atom<IListItem[]>({
   key: '#searchMovieListAtom',
   default: [],
 })

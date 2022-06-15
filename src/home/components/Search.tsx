@@ -1,7 +1,7 @@
 import styles from './Search.module.scss'
 import { useRecoilState } from 'recoil'
 import { inputTextAtom, isLoadingAtom, movieListAtom, pageNumberAtom, maxPageAtom } from 'common/atom/Atom'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import axios from 'axios'
 
@@ -15,34 +15,37 @@ const Search = () => {
   const [maxPage, setMaxPage] = useRecoilState(maxPageAtom)
 
   //  api call function
-  const getMovieData = (movieName: string, pageNumber: number) => {
-    setIsLoading(true)
-    if (movieName === '') {
-      setMovieList([])
-      return
-    }
-    const url = `https://www.omdbapi.com/?apikey=7c1fab90`
-    if (page <= maxPage) {
-      axios
-        .get(url, {
-          params: {
-            s: movieName,
-            page: pageNumber,
-          },
-        })
-        .then((res) => {
-          if (res.data.Response === 'True') {
-            // @ts-ignore
-            setMovieList((prev) => [...prev, ...res.data.Search])
-            setMaxPage(Math.ceil(res.data.totalResults / 10))
-          } else {
-            setMovieList([])
-          }
-        })
-    }
 
-    setIsLoading(false)
-  }
+  const getMovieData = useCallback(
+    (movieName: string, pageNumber: number) => {
+      setIsLoading(true)
+      if (movieName === '') {
+        setMovieList([])
+        return
+      }
+      const url = `https://www.omdbapi.com/?apikey=7c1fab90`
+      if (page <= maxPage) {
+        axios
+          .get(url, {
+            params: {
+              s: movieName,
+              page: pageNumber,
+            },
+          })
+          .then((res) => {
+            if (res.data.Response === 'True') {
+              setMovieList((prev) => [...prev, ...res.data.Search])
+              setMaxPage(Math.ceil(res.data.totalResults / 10))
+            } else {
+              setMovieList([])
+            }
+          })
+      }
+
+      setIsLoading(false)
+    },
+    [maxPage, page, setIsLoading, setMaxPage, setMovieList]
+  )
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -51,16 +54,14 @@ const Search = () => {
     setText('')
   }
 
-  const handleChange = (e: React.InputHTMLAttributes<HTMLInputElement>) => {
-    // @ts-ignore
-    setText(e.target.value)
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setText(e.currentTarget.value)
   }
 
   useEffect(() => {
     if (inputText === '') return
     getMovieData(inputText, page)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inputText, page])
+  }, [getMovieData, inputText, page])
 
   return (
     <div className={styles.container}>
