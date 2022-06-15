@@ -15,8 +15,12 @@ const ModalContent = ({ header }: IProps) => {
   const [favList, setFavList] = useRecoilState(favListAtom)
   const [modalOpen, setModalOpen] = useRecoilState<boolean>(modalOpenAtom)
 
-  const handleCancel = () => {
+  const handleDelete = () => {
     setFavList(favList.filter((item: { imdbID: string }) => item.imdbID !== Object(currentMovie).imdbID))
+    setModalOpen(false)
+  }
+
+  const handleCancel = () => {
     setModalOpen(false)
   }
 
@@ -38,7 +42,7 @@ const ModalContent = ({ header }: IProps) => {
             </main>
             <footer>
               {favList.filter((el: { imdbID: string }) => el.imdbID.includes(Object(currentMovie).imdbID)).length ? (
-                <button type='button' onClick={handleCancel}>
+                <button type='button' onClick={handleDelete}>
                   delete
                 </button>
               ) : (
