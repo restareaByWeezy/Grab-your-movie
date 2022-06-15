@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-shadow */
-// @ts-nocheck
-
 import { useRef } from 'react'
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
 import { useRecoilState } from 'recoil'
@@ -9,15 +6,16 @@ import styles from './FavList.module.scss'
 
 import Modal from 'common/components/Modal/Modal'
 import { currentMovieAtom, favListAtom, modalOpenAtom } from 'common/atom/Atom'
+import { IListItem } from 'types/movie'
 
 const FavList = () => {
   const [favList, setFavList] = useRecoilState(favListAtom)
-  const [, setCurrentMovie] = useRecoilState<IListItem[]>(currentMovieAtom)
+  const [, setCurrentMovie] = useRecoilState(currentMovieAtom)
   const [, setShowModal] = useRecoilState(modalOpenAtom)
 
   //  dnd logic
 
-  const ref = useRef()
+  const ref = useRef<HTMLLIElement>(null)
 
   const handleChange = (result: DropResult) => {
     if (!result.destination) return
@@ -28,9 +26,9 @@ const FavList = () => {
     setFavList(items)
   }
 
-  const openModal = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const openModal = (e: React.MouseEvent<HTMLInputElement>) => {
     const { poster, title, year, type, imdbid } = e.currentTarget.dataset
-    const items = {
+    const items: IListItem = {
       Title: title,
       Type: type,
       Year: year,
@@ -40,16 +38,13 @@ const FavList = () => {
     setCurrentMovie(items)
     setShowModal(true)
   }
-  const closeModal = () => {
-    setShowModal(false)
-  }
 
   const favListMap = (
     <DragDropContext onDragEnd={handleChange}>
       <Droppable droppableId='FavList'>
-        {(provided) => (
-          <ul className='favList' {...provided.droppableProps} ref={provided.innerRef}>
-            {favList.map(({ imdbID, Poster, Title, Year, Type }, index: number) => (
+        {(provide) => (
+          <ul className='favList' {...provide.droppableProps} ref={provide.innerRef}>
+            {favList.map(({ imdbID, Poster, Title, Year, Type }: IListItem, index: number) => (
               <Draggable key={imdbID} draggableId={`draggable-${imdbID}`} index={index}>
                 {(provided) => (
                   <li ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps}>
@@ -74,7 +69,7 @@ const FavList = () => {
                 )}
               </Draggable>
             ))}
-            {provided.placeholder}
+            {provide.placeholder}
           </ul>
         )}
       </Droppable>
@@ -88,7 +83,7 @@ const FavList = () => {
         {favList.length === 0 && <span className={styles.noMovie}>영화를 Grab 해보세요!</span>}
         {favListMap}
         <li ref={ref} />
-        <Modal close={closeModal} header='Will you grab this movie?' />
+        <Modal header='Will you grab this movie?' />
       </ul>
     </div>
   )

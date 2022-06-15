@@ -1,4 +1,4 @@
-import RootRouter from './routes/RootRouter'
+import { RootRouter } from './routes/RootRouter'
 import { RecoilRoot } from 'recoil'
 
 // eslint-disable-next-line import/extensions

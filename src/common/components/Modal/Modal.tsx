@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const ModalContent = ({ header }: IProps) => {
-  const currentMovie = useRecoilValue<IListItem[]>(currentMovieAtom)
+  const currentMovie = useRecoilValue<IListItem>(currentMovieAtom)
   const [favList, setFavList] = useRecoilState(favListAtom)
   const [modalOpen, setModalOpen] = useRecoilState<boolean>(modalOpenAtom)
 

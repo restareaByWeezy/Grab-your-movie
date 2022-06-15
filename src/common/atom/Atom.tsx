@@ -42,17 +42,15 @@ export const isLoadingAtom = atom({
   default: false,
 })
 
-export const currentMovieAtom = atom<IListItem[]>({
+export const currentMovieAtom = atom<IListItem>({
   key: '#currentMovieAtom',
-  default: [
-    {
-      Title: '',
-      Type: '',
-      Year: '',
-      imdbID: '',
-      Poster: '',
-    },
-  ],
+  default: {
+    Title: '',
+    Type: '',
+    Year: '',
+    imdbID: '',
+    Poster: '',
+  },
 })
 
 export const modalOpenAtom = atom<boolean>({ key: '#modalOpenAtom', default: false })
