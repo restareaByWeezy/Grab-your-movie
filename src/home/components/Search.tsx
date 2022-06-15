@@ -15,7 +15,6 @@ const Search = () => {
   const [maxPage, setMaxPage] = useRecoilState(maxPageAtom)
 
   //  api call function
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getMovieData = (movieName: string, pageNumber: number) => {
     setIsLoading(true)
     if (movieName === '') {
